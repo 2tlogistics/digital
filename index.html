@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Innovation Agency | AI-Powered Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.jpeg" type="image/x-icon">
+
+
+    <style>
+/* Estilos para el cohete en el Hero */
+.hero-rocket {
+    position: absolute; /* ESENCIAL para que GSAP pueda moverlo libremente */
+    width: 80px; /* Ancho del cohete, ajusta si es necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 50; /* Asegura que esté por encima de otros elementos */
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7)); /* Brillo opcional */
+}
+    </style>
+</head>
+<body>
+    <!-- Diamond Effect -->
+    <div class="diamantes" id="diamantes"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">
+            <img src="logo.jpeg" alt="Digital Innovation Logo" class="logo-img">
+            DIGITAL<span>INNOVATION</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#slideshow">Our Work</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+            <a href="https://n8n-api.awaholdingsac.com/form/4bf9489b-fd10-4e6d-b6eb-eac2c9602dbd" class="cta-button nav-button">Get Started</a>
+        </nav>
+        <button class="mobile-menu-toggle">☰</button>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+       
+        <div class="hero-bg-overlay"></div><div class="hero-content">
+            <h1 class="hero-title">DIGITAL INNOVATION</h1>
+            <p class="hero-subtitle">DIGITAL-WEB-MARKETING & BUSINESS SERVICES. Transforming Ideas into Digital Success Stories</p>
+            <a href="https://n8n-api.awaholdingsac.com/form/4bf9489b-fd10-4e6d-b6eb-eac2c9602dbd" class="cta-button hero-button">Request Quote</a>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">Clients Worldwide</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Support Hours</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Agents Animation -->
+        <div class="ai-agents">
+            <div class="ai-agent floating" style="top: 20%; left: 30%; animation-delay: 0s;">AI</div>
+            <div class="ai-agent floating" style="top: 60%; left: 10%; animation-delay: 1s;">ML</div>
+            <div class="ai-agent floating" style="top: 40%; left: 70%; animation-delay: 2s;">DL</div>
+        </div>
+        
+        <!-- Space Effects -->
+        <img src="cohete.png" alt="Cohete" class="hero-rocket" id="heroRocket">
+        <img src="cohete2.png" alt="Cohete 1" class="hero-rocket">
+<img src="cohete3.png" alt="Cohete 2" class="hero-rocket">
+
+        <div class="space-effects" id="spaceEffects"></div>
+     
+    </section>
+
+    <!-- Slider/About Section -->
+    <section class="slider-section" id="slider">
+        <div class="slider-container">
+            <div class="slider-logo">
+                <img src="LOGO3DTRANS.png" alt="Digital Innovation Logo" class="rotating">
+            </div>
+            <div class="slider-content">
+                <h2 class="slider-title">Who we are?</h2>
+                <p class="slider-text">At Digital Innovation, we are a passionate team of digital marketing and web development experts dedicated to empowering small and medium-sized businesses across various industries. Our mission is to harness the power of digital technologies to help you thrive in a competitive landscape.</p>
+                <p class="slider-text">With a focus on innovation and tailored solutions, we work closely with our clients to understand their unique needs and transform their visions into reality. Together, we can unlock the full potential of your business and drive sustainable growth in the digital age.</p>
+                <a href="#features" class="cta-button">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Section with Parallax -->
+    <section class="slideshow-section" id="slideshow">
+        <div class="slideshow-background"></div>
+        <div class="slideshow-container"><div class="slideshow-wave slideshow-wave-1"></div>
+        <div class="slideshow-wave slideshow-wave-2"></div>
+            <div class="slideshow-header">
+                <h2 class="slideshow-title">Our Portfolio</h2>
+                <p class="slideshow-subtitle">Explore our latest projects and web design models</p>
+            </div>
+            
+            <div class="slideshow">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">E-commerce Platform</h3>
+                        <p class="slide-description">Modern e-commerce solution with AI-powered recommendations</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Corporate Website</h3>
+                        <p class="slide-description">Professional design with interactive elements</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Mobile Application</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('WEB1.PNG');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Beauty & SPA Application</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('WEB2.PNG');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Payment Platforms</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('WEB3.PNG');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Entrepeanurs Website</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                                
+                <div class="slide" style="background-image: url('WEB5.PNG');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Company Website</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+                             
+                <div class="slide" style="background-image: url('WEB7.PNG');">
+                    <div class="slide-content">
+                        <h3 class="slide-title">Industrial Website</h3>
+                        <p class="slide-description">Cross-platform mobile app with seamless UX</p>
+                        <a href="#" class="cta-button slide-button">View Project</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            
+            <div class="slideshow-nav">
+                <div class="slide-dot active" data-slide="0"></div>
+                <div class="slide-dot" data-slide="1"></div>
+                <div class="slide-dot" data-slide="2"></div>
+                <div class="slide-dot" data-slide="3"></div>
+                <div class="slide-dot" data-slide="4"></div>
+                <div class="slide-dot" data-slide="5"></div>
+                <div class="slide-dot" data-slide="6"></div>
+                <div class="slide-dot" data-slide="7"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Flip Cards -->
+    <section class="services-section" id="services">
+        <h2 class="services-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">💻</div>
+                        <h3 class="flip-card-title">Web Development</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">Web Development</h3>
+                        <p class="flip-card-description">Custom websites built with modern technologies for optimal performance and user experience.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">📱</div>
+                        <h3 class="flip-card-title">Mobile Apps</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">Mobile Apps</h3>
+                        <p class="flip-card-description">Cross-platform mobile applications that work seamlessly on all devices.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">📈</div>
+                        <h3 class="flip-card-title">Digital Marketing</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">Digital Marketing</h3>
+                        <p class="flip-card-description">Comprehensive strategies to boost your online presence and customer engagement.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">🔗</div>
+                        <h3 class="flip-card-title">Blockchain</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">Blockchain Solutions</h3>
+                        <p class="flip-card-description">Smart contracts, tokenization, and decentralized applications for the Web3 era.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">🤖</div>
+                        <h3 class="flip-card-title">AI & Automation</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">AI & Automation</h3>
+                        <p class="flip-card-description">Machine learning models and process automation to optimize your business.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-icon">📊</div>
+                        <h3 class="flip-card-title">Data Analytics</h3>
+                        <p class="flip-card-description">Click to learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="flip-card-title">Data Analytics</h3>
+                        <p class="flip-card-description">Turn your data into actionable insights with our analytics solutions.</p>
+                        <a href="#" class="cta-button flip-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="wave-section">
+        <div class="wave-background"></div>
+        <div class="section-content">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-description">
+                Digital Innovation isn't just a service provider; we're your partners in progress. 
+                We leverage cutting-edge technology and innovative strategies to ensure your business 
+                stands out in today's competitive market. Our team of experts is passionate about 
+                delivering measurable results, tailored specifically to your unique needs.
+            </p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">Clients Worldwide</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="99">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Support Hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-header">
+            <h2 class="testimonials-title">Client Testimonials</h2>
+            <p class="testimonials-subtitle">See what our clients say about our services. We pride ourselves on delivering exceptional results.</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-content">"Working with this team transformed our online presence. Their attention to detail and innovative approach delivered results beyond our expectations."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>CEO, TechSolutions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-content">"The website they created for us increased our conversion rate by 40%. Their team is professional, creative, and truly understands digital marketing."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>Marketing Director, GlobalRetail</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-content">"Outstanding service from start to finish. They took our vague ideas and turned them into a stunning, functional website that perfectly represents our brand."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Emma Rodriguez</h4>
+                        <p>Founder, CreativeMinds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Features Section -->
+<section class="services-section" id="features">
+    <h2 class="services-title">Our AI Solutions</h2>
+    <div class="services-grid">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">🤖</div>
+                    <h3 class="flip-card-title">Order Automation</h3>
+                    <p class="flip-card-description">Click to learn more</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3 class="flip-card-title">Order Automation</h3>
+                    <p class="flip-card-description">Automate your entire order processing workflow with our intelligent AI agents that learn and adapt to your business needs.</p>
+                    <a href="#" class="cta-button flip-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">💰</div>
+                    <h3 class="flip-card-title">Cash Flow Optimization</h3>
+                    <p class="flip-card-description">Click to learn more</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3 class="flip-card-title">Cash Flow Optimization</h3>
+                    <p class="flip-card-description">Our predictive algorithms analyze payment patterns to optimize your cash flow and reduce outstanding receivables.</p>
+                    <a href="#" class="cta-button flip-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">📊</div>
+                    <h3 class="flip-card-title">Real-time Analytics</h3>
+                    <p class="flip-card-description">Click to learn more</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3 class="flip-card-title">Real-time Analytics</h3>
+                    <p class="flip-card-description">Get actionable insights with our dashboard that provides real-time visibility into your order-to-cash performance.</p>
+                    <a href="#" class="cta-button flip-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+   
+    <div class="contact-container">
+      
+        <div class="contact-info-wrapper">
+            
+            <div class="contact-info">
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-text">Ready to transform your business with our AI solutions? <br>Contact us today to schedule a demo or ask any questions.</p>
+                
+                <div class="contact-details-box">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i>📍</i>
+                            <span>440 Cobia Drive, Texas City - USA</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🇺🇸</span> <!-- Bandera de EE.UU. -->
+                            <span>+1 (346) 366-1414 (Texas)</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🇵🇪</span> <!-- Bandera de Perú -->
+                            <span>+51 987-586-013 (Lima)</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🇻🇪</span> <!-- Bandera de Venezuela -->
+                            <span>+58 (412) 927-2908 (Caracas)</span>
+                        </div>
+                        <div class="contact-item">
+                            <i>✉️</i>
+                            <span>info@digitalinnovation.agency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form-wrapper">
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xjkrqjge" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" class="form-input" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">
+                <img src="logo.jpeg" alt="Digital Innovation Logo" class="footer-logo-img" >
+                 <span>DIGITAL INNOVATION USA</span>
+            </a>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#slideshow">Our Work</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#features">Solutions</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">💻</a>
+                <a href="#" class="social-link">📘</a>
+                <a href="#" class="social-link">🐦</a>
+                <a href="#" class="social-link">🔗</a>
+            </div>
+            <p class="copyright">© 2025 Digital Innovation Agency. All rights reserved.</p>
+        </div>
+    </footer>
+  
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- Plugins (ScrollTrigger es el más usado) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Efectos de texto -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+<!-- Animaciones SVG -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+
+<!-- Efectos especiales -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EaselPlugin.min.js"></script>
+    <script src="script.js"></script>
+  <!-- Botón de WhatsApp con Robot -->
+  <a href="https://wa.me/584129272908" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> <!-- Usamos Font Awesome para el ícono -->
+</a>
+
+</body>
+</html>
