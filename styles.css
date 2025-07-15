@@ -9,6 +9,7 @@
     --color-contact-bg: var(--color-pearl-white);
     --color-contact-text: #333333;
     --color-contact-border: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
 * {
@@ -273,13 +274,21 @@ header.scrolled {
     overflow: hidden;
 }
 
-/* Nuevos estilos para las estrellas del Hero */
+/* Estrellas del Hero */
 .stars {
-    position: absolute; /* Crucial para posicionar las estrellas con JS */
-    background-color: white; /* Color de las estrellas, puedes usar #FFD700 si lo prefieres */
-    border-radius: 50%; /* Para que las estrellas sean redondas */
-    /* El tamaño (width, height), y la posición (left, top) se manejan desde script.js */
-    animation: twinkle var(--duration) infinite ease-in-out; /* Aplica la animación */
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.hero-rocket {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    z-index: 50;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
 }
 
 @keyframes twinkle {
@@ -290,13 +299,6 @@ header.scrolled {
 .star {
     color: #FFD700;
     font-size: 1.2rem;
-}
-
-
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.2; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
 }
 
 /* Slider Section */
@@ -471,6 +473,7 @@ header.scrolled {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .slide-dot {
@@ -656,16 +659,17 @@ header.scrolled {
     justify-content: center;
     gap: 0.2rem;
 }
+
 .testimonial-card.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Para cuando GSAP no carga */
 .no-gsap .testimonial-card {
     opacity: 1 !important;
-    transform: none !important;}
-/* Fallback en caso de que GSAP no cargue */
+    transform: none !important;
+}
+
 .no-gsap .testimonials-section,
 .no-gsap .features,
 .no-gsap .testimonial-card,
@@ -918,52 +922,6 @@ header.scrolled {
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: flex-start;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.contact-title {
-    font-size: 2.2rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.contact-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 80px;
-    height: 3px;
-    background: var(--color-accent);
-}
-
-.contact-text {
-    color: var(--color-contact-text);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Contact Form */
-/* Contact Section */
-.contact {
-    padding: 6rem 10%;
-    background-color: var(--color-contact-bg);
-    position: relative;
-    color: var(--color-contact-text);
-}
-
-.contact-container {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
@@ -974,7 +932,6 @@ header.scrolled {
     flex: 1;
     display: flex;
     flex-direction: column;
-    grid-column: 2;
 }
 
 .contact-info {
@@ -985,7 +942,6 @@ header.scrolled {
 
 .contact-form-wrapper {
     flex: 1;
-    grid-column: 2;
 }
 
 .contact-title {
@@ -1054,17 +1010,6 @@ header.scrolled {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--color-contact-border);
     height: 100%;
-}
-
-@media (max-width: 1024px) {
-    .contact-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .contact-details-box {
-        margin-top: 2rem;
-    }
 }
 
 /* Form Styles */
@@ -1217,7 +1162,40 @@ footer {
     animation: rotate 20s linear infinite;
 }
 
-/* Responsive */
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes whatsappPulse {
+    0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+    50% { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
     .ai-agents {
         display: none;
@@ -1239,6 +1217,16 @@ footer {
 
     .slideshow {
         height: 400px;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .world-map {
+        max-width: 100%;
+        margin: 0 auto 2rem;
     }
 }
 
@@ -1294,13 +1282,6 @@ footer {
         gap: 1.5rem;
     }
     
-    .contact-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: flex-start;
-    }
-    
     .slideshow {
         height: 300px;
     }
@@ -1338,9 +1319,19 @@ footer {
     .testimonial-card {
         padding: 1.5rem;
     }
+    
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 480px) {
+    :root {
+        font-size: 14px;
+    }
+    
     .logo {
         font-size: 1.3rem;
     }
@@ -1381,164 +1372,12 @@ footer {
     .footer-links a {
         font-size: 0.8rem;
     }
-
-    /* World Map Styles */
-    .world-map {
-        max-width: 100%;
-        margin: 0 auto 2rem;
-        z-index: 1;
-    }
-
-.map-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: brightness(0.8) contrast(1.2);
-    z-index: 1;
-}
-
-.location-marker {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.location-marker.texas { top: 40%; left: 25%; }
-.location-marker.lima { top: 65%; left: 30%; }
-.location-marker.caracas { top: 60%; left: 32%; }
-
-.marker-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.5);
-    position: relative;
-    z-index: 2;
-}
-
-.marker-pulse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgba(100, 255, 218, 0.7);
-    animation: pulse 2s infinite;
-    z-index: 1;
-}
-
-@keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
-}
-
-/* Flag Icons */
-.flag-icon {
-    width: 20px;
-    height: 15px;
-    display: inline-block;
-    margin-right: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    vertical-align: middle;
-    position: relative; /* Necesario para z-index */
-    z-index: 1; /* Asegura que aparezca sobre otros elementos */
-}
-
-/* Banderas SVG optimizadas */
-.flag-us {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23bd3d44'/%3E%3Cpath fill='%23fff' d='M0 0h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0z'/%3E%3Crect width='30' height='16' fill='%23192f5d'/%3E%3C/svg%3E");
-}
-
-.flag-pe {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23d91023'/%3E%3Crect x='20' width='20' height='40' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.flag-ve {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23cf142b'/%3E%3Crect width='60' height='26.7' fill='%2300478b'/%3E%3Crect width='60' height='13.3' fill='%23fcd116'/%3E%3C/svg%3E");
-}
-
-/* Responsive adjustments */
-
-@media (max-width: 768px) {
-    .world-map {
-        max-width: 100%;
-    }
     
-    .location-marker.texas { top: 35%; left: 20%; }
-    .location-marker.lima { top: 60%; left: 25%; }
-    .location-marker.caracas { top: 55%; left: 27%; }
-}
-.map-tooltip {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-secondary);
-    color: var(--color-text);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-@media (max-width: 1024px) {
-    .contact-container {
-        grid-template-columns: 1fr;
+    .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        bottom: 15px;
+        right: 15px;
     }
-    
-    .world-map {
-        max-width: 100%;
-        margin: 0 auto 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-form-wrapper {
-        gap: 1.5rem;
-    }
-}
-/* Botón de WhatsApp con Robot - Versión corregida */
-/* General Body and HTML styles if needed (adjust as per your site's base styles) */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Ensure Montserrat is imported or available */
-}
-
-/* Botón de WhatsApp con Robot - Versión Corregida Final */
-/* WhatsApp Button - Versión optimizada y corregida */
-.whatsapp-btn {
-    width: 70px; /* Slightly smaller on small screens */
-    height: 70px;
-    font-size: 35px;
-    bottom: 20px;
-    right: 20px;
-}
-
-.whatsapp-btn:hover {
-    background-color: #128C7E;
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Animación de pulso mejorada */
-@keyframes whatsappPulse {
-    0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
-    50% { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
-    100% { transform: scale(1); box-shadow: 0 4-12px rgba(0, 0, 0, 0.2); }
-}
-
-
-
 }
