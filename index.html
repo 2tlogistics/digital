@@ -533,10 +533,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EaselPlugin.min.js"></script>
     <script src="script.js"></script>
-  <!-- Botón de WhatsApp con Robot -->
-  <a href="https://wa.me/584129272908" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i> <!-- Usamos Font Awesome para el ícono -->
-</a>
+ <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+        webhookUrl: 'https://n8n-api.awaholdingsac.com/webhook/f4762035-b649-476f-8070-abf412ccad2c/chat',
+        webhookConfig: {
+            method: 'POST',
+            headers: {}
+        },
+        target: '#n8n-chat',
+        mode: 'window',
+        chatInputKey: 'chatInput',
+        chatSessionKey: 'sessionId',
+        loadPreviousSession: true,
+        metadata: {},
+        showWelcomeScreen: false,
+        defaultLanguage: 'en',
+        initialMessages: [
+            'Hi there! 👋',
+            'My name is digibot. How can I assist you today?'
+        ],
+        i18n: {
+            en: {
+                title: 'Digital Chat',
+                subtitle: "Start a chat. We're here to help you 24/7.",
+                footer: '',
+                getStarted: 'New Conversation',
+                inputPlaceholder: 'Type your question..',
+            },
+        },
+        theme: {
+            primary: '#0a192f',
+            secondary: '#172a45',
+            accent: '#64ffda',
+            text: '#ccd6f6',
+            textSecondary: '#8892b0',
+            background: '#020c1b',
+            messageBubbleUserBackground: '#64ffda',
+            messageBubbleUserText: '#020c1b',
+            messageBubbleBotBackground: '#0a192f',
+            messageBubbleBotText: '#ccd6f6',
+            inputBackground: '#172a45',
+            inputText: '#ccd6f6',
+            border: 'rgba(100, 255, 218, 0.3)',
+            sendButton: '#64ffda',
+            sendButtonIcon: '#020c1b'
+        }
+    });
+</script> 
 
 </body>
 </html>
